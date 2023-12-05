@@ -1,0 +1,16 @@
+﻿RC4 RespawnCharacter hack
+
+unsafe
+            {
+                byte* bytes = stackalloc byte[Marshal.SizeOf<NullableFloat>()];
+                IntPtr bytePtr = new(bytes);
+                Marshal.StructureToPtr<NullableFloat>(new()
+                {
+                    value = pos,
+                    has_value = true
+                }, bytePtr, false);
+
+                serverBootstrapSystem.RespawnCharacter(buffer, ctx.Event.SenderUserEntity,
+                    customSpawnLocation: *(Nullable_Unboxed<float3>*)bytePtr,
+                    previousCharacter: ctx.Event.SenderCharacterEntity);
+            }

@@ -1,0 +1,20 @@
+﻿[indev1.1]
+
+- Added .j(ewel) command to spawn custom jewels with specified
+modifications via .j(ewel) <spell name> [mods]
+Jewels are set at 0.75 strength
+
+[indev1.101]
+- Modified jewels to be spawned at full strength after discussion 
+with the admin team
+
+[indev1.102]
+- Added .p(ing) command for players to see their ping
+- Changed the way colors are handled in code
+
+[indev1.12]
+- Modified .bp command to save blood quality as preference
+- Child-proofed building stuff with debug settings for non-admins
+
+[indev1.13]
+- Added wolf speed

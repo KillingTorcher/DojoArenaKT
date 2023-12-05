@@ -1,0 +1,132 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>DojoArenaKT</AssemblyName>
+    <Description>The Dojo: Arena Plugin by KT</Description>
+    <Version>1.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>preview</LangVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <UnhollowedDllPath>Q:\Development\V Rising Development\GloomrotServer\BepInEx\interop</UnhollowedDllPath>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants)TRACE; Bloodstone</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>Bloodstone</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Patch Notes.txt" />
+    <None Remove="Resources\WelcomeMessage.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="SQLite" Version="3.13.0" />
+    <PackageReference Include="VRising.Unhollowed.Client" Version="0.6.5.*" />
+    <PackageReference Include="VRising.Bloodstone" Version="0.1.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Patch Notes.txt" />
+    <EmbeddedResource Include="Resources\WelcomeMessage.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\GloomrotServer\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver">
+      <HintPath>..\GloomrotServer\BepInEx\core\AsmResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.DotNet">
+      <HintPath>..\GloomrotServer\BepInEx\core\AsmResolver.DotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE">
+      <HintPath>..\GloomrotServer\BepInEx\core\AsmResolver.PE.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE.File">
+      <HintPath>..\GloomrotServer\BepInEx\core\AsmResolver.PE.File.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetRipper.VersionUtilities">
+      <HintPath>..\GloomrotServer\BepInEx\core\AssetRipper.VersionUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Core">
+      <HintPath>..\GloomrotServer\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader.Core">
+      <HintPath>..\GloomrotServer\BepInEx\core\BepInEx.Preloader.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.Common">
+      <HintPath>..\GloomrotServer\BepInEx\core\BepInEx.Unity.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>..\GloomrotServer\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Cpp2IL.Core">
+      <HintPath>..\GloomrotServer\BepInEx\core\Cpp2IL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Disarm">
+      <HintPath>..\GloomrotServer\BepInEx\core\Disarm.dll</HintPath>
+    </Reference>
+    <Reference Include="Gee.External.Capstone">
+      <HintPath>..\GloomrotServer\BepInEx\core\Gee.External.Capstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Iced">
+      <HintPath>..\GloomrotServer\BepInEx\core\Iced.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>..\GloomrotServer\BepInEx\core\Il2CppInterop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Generator">
+      <HintPath>..\GloomrotServer\BepInEx\core\Il2CppInterop.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.HarmonySupport">
+      <HintPath>..\GloomrotServer\BepInEx\core\Il2CppInterop.HarmonySupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>..\GloomrotServer\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="LibCpp2IL">
+      <HintPath>..\GloomrotServer\BepInEx\core\LibCpp2IL.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\GloomrotServer\BepInEx\core\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\GloomrotServer\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\GloomrotServer\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\GloomrotServer\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\GloomrotServer\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\GloomrotServer\BepInEx\core\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SemanticVersioning">
+      <HintPath>..\GloomrotServer\BepInEx\core\SemanticVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="StableNameDotNet">
+      <HintPath>..\GloomrotServer\BepInEx\core\StableNameDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="WasmDisassembler">
+      <HintPath>..\GloomrotServer\BepInEx\core\WasmDisassembler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="CopyDLLs" AfterTargets="Build">
+    <Message Text="Executing CopyDLLs task" Importance="High" />
+
+    <Copy SourceFiles="$(TargetDir)$(ProjectName).dll" DestinationFolder="Q:\Development\V Rising Development\GloomrotServer\BepInEx\BloodstonePlugins" />
+    <Message Text="Copied build files" Importance="High" />
+  </Target>
+</Project>
